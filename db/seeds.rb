@@ -5,3 +5,17 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+def post_attrs
+  {
+    description: ['Road', 'Mountain', 'Other'].sample,
+    category:    ['Road', 'Mountain', 'Other'].sample,
+    price:       rand(800) + 500
+  }
+end
+
+50.times do
+  Post.create post_attrs
+  print '.'
+end
+puts 'Posts created!'
